@@ -45,14 +45,15 @@ class App extends Component<{}, IState> {
     const interval = setInterval(() => {
       DataStreamer.getData((serverResponds: ServerRespond[]) => {
         this.setState({
-          data: serverResponds, showGraph: true
+          data: serverResponds, 
+          showGraph: true
         });
       });
       x++;
       if (x > 1000) {
         clearInterval(interval);
       }
-    } , 100);
+    }, 100);
   }
 
   /**
